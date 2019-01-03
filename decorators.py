@@ -9,16 +9,15 @@ def operations(func):
 
 print(operations(first(5)))
 '''
-
-'''def outer(a):
+'''
+def outer(a):
     print("outer function::",a)
     def inner(x):
         print("inner function::",x)
     return inner
 
 obj = outer(10)(6)
-# obj(6)
-'''
+# obj(6)'''
 
 '''def first(func):
     def inner(x):
@@ -31,6 +30,7 @@ def second():
 obj = second()
 print(obj)
 obj1= first(second())(5)'''
+'''
 #function based decorator without arguments
 def validate(func):
     def hello(a,b):
@@ -44,7 +44,7 @@ def validate(func):
 def add(x,y):
     return x+y
 
-add(5,5)
+add(5,5)'''
 
 #class based decorators:
 class squares:
@@ -60,4 +60,17 @@ def square(y):
 
 square(5)
 
+'''
+#decorators with arguements
+def one(a,b):
+    def two(func):
+        def three(x,y):
+            print(func(x,y))
+        return three
+    return two
+@one(2,3)
+def four(x,y):
+    return x+y
 
+four(10,25)
+'''
